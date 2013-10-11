@@ -19,8 +19,11 @@ function runLaravelArtisan() {
 function runLaravelArtisan() {
 	findLaravelArtisan
 	if [ "$ARTISAN_APP" != "" ] && [ -f $ARTISAN_APP ]; then 
+		echo "Artisan found at $ARTISAN_APP"
 		php $ARTISAN_APP $@
 		exit 1
+	else
+		echo "sorry, no artisan found"
 	fi
 }
 
