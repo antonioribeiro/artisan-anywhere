@@ -46,3 +46,7 @@ sudo ln -s /etc/laravel-anywhere/artisan.sh /usr/bin/artisan
 
 sudo chmod 755 /usr/bin/artisan
 ```
+
+#### Contributing
+
+Pull requests and issues are more than welcome.
