@@ -3,7 +3,7 @@ Artisan Anywhere
 
 ### Execute Artisan from anywhere in your Laravel project tree
 
-Let's suppose you went for a walk down the Illuminate tree and, being in `/var/www/laravel/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations`, you decided tinker to test some stuff, well... you have some options:
+Let's suppose you went for a walk, far down the Illuminate tree and, being in `/var/www/laravel/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations`, you need to run tinker, to test some stuff, well... you have some options:
 
 ```
 php ../../../../../../../../artisan tinker
