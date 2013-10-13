@@ -1,10 +1,6 @@
 ARTISAN_APP=artisan
 
 function main() {
-	ourArtisan $@
-}
-
-function ourArtisan()  {
  	runLaravelArtisan $@
 }
 
