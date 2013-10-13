@@ -1,50 +1,61 @@
-ARTISAN_APP=artisan
+ARTISAN_APP=./artisan
 
 function main() {
- 	runLaravelArtisan $@
+    runLaravelArtisan $@
 }
 
 function runLaravelArtisan() {
-	findLaravelArtisan
-	if [ "$ARTISAN_APP" != "" ] && [ -f $ARTISAN_APP ]; then 
-		echo "Artisan found at $ARTISAN_APP"
-		php $ARTISAN_APP $@
-		exit 1
-	else
-		echo "sorry, no artisan found"
-	fi
+
+    # is there an artisan in current folder?
+    if [ ! -f $ARTISAN_APP ]; then 
+        findLaravelArtisan
+    fi
+
+    # artisan was found?
+    if [ "$ARTISAN_APP" != "" ] && [ -f $ARTISAN_APP ]; then 
+        echo "Artisan found at $ARTISAN_APP"
+        php $ARTISAN_APP $@
+        exit 1
+    else
+        echo "sorry, no artisan found"
+    fi
+
 }
 
 function findLaravelArtisan() {
 
-	# get the current directory
-	dir=`pwd`
-	# break it to an array
-	dirs=(${dir//\// })
-	# get the number of items
-	I=${#dirs[@]}
+    # get the current directory
+    dir=`pwd`
 
-	#
-	while [ $I -gt 0 ]; do 
-		dir=
-		x=$I
-		for current in "${dirs[@]}"; do
-		    dir=$dir/$current
-		    ((x--))
-		    if [ $x = 0 ]; then
-		    	break
-		    fi
-		done
-		if [ -f "$dir/$ARTISAN_APP" ]; then
-			app="$dir/$ARTISAN_APP"
-			break
-		fi
-		((I--))
-	done
+    # break it to an array
+    dirs=(${dir//\// })
 
-	if [[ "$app" != "" ]]; then
-		ARTISAN_APP=$app
-	fi
+    # get the number of items
+    I=${#dirs[@]}
+
+    # find artisan
+    ARTISAN_APP=
+    while [ $I -gt 0 ]; do 
+        dir=
+        x=$I
+        for current in "${dirs[@]}"; do
+            dir=$dir/$current
+            ((x--))
+            if [ $x = 0 ]; then
+                break
+            fi
+        done
+        if [ -f "$dir/$ARTISAN_APP" ]; then
+            app="$dir/$ARTISAN_APP"
+            break
+        fi
+        ((I--))
+    done
+
+    #
+    if [[ "$app" != "" ]]; then
+        ARTISAN_APP=$app
+    fi
 
 }
 
