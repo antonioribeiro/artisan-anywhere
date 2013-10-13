@@ -33,7 +33,7 @@ function findLaravelArtisan() {
     # get the number of items
     I=${#dirs[@]}
 
-    # find artisan
+    # search down for artisan
     ARTISAN_APP=
     while [ $I -gt 0 ]; do 
         dir=
@@ -52,7 +52,7 @@ function findLaravelArtisan() {
         ((I--))
     done
 
-    #
+    # was it found?
     if [[ "$app" != "" ]]; then
         ARTISAN_APP=$app
     fi
