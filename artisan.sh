@@ -34,7 +34,7 @@ function findLaravelArtisan() {
     I=${#dirs[@]}
 
     # search down for artisan
-    ARTISAN_APP=
+    ARTISAN_APP=artisan
     while [ $I -gt 0 ]; do 
         dir=
         x=$I
