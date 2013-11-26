@@ -30,9 +30,8 @@ What do you prefer?
 You can just download the raw file to your /usr/bin and make it executable
 
 ```
-sudo wget -q -O test \
- https://raw.github.com/antonioribeiro/artisan-anywhere/master/artisan.sh \
- /usr/bin/artisan
+sudo wget -q -O /usr/bin/artisan \
+ https://raw.github.com/antonioribeiro/artisan-anywhere/master/artisan.sh
 
 sudo chmod 755 /usr/bin/artisan
 ```
