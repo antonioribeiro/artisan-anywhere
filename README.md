@@ -1,6 +1,16 @@
 Artisan Anywhere
 ================
 
+### TLDR;
+
+This script will find artisan down the directory and execute it for you. So, running
+
+`artisan migrate`
+
+If you are up in the project tree, can be be equivalent to
+
+`php ../../../../../../../../artisan migrate`
+
 ### Execute Artisan from anywhere in your Laravel project tree
 
 Let's suppose you went for a walk, far down the Illuminate tree and, being in 
