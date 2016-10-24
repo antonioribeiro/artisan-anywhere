@@ -59,4 +59,4 @@ function findLaravelArtisan() {
 
 }
 
-main $@
+main "$@"
