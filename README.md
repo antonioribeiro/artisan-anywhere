@@ -1,21 +1,40 @@
-Artisan Anywhere
-================
+Laravel Artisan Anywhere
+========================
 
 ### TLDR;
 
-This script will find artisan down the directory and execute it for you. So, running
+This script will recursively look for the artisan command down the directory tree and execute it for you, no matter where you are in the project tree. So, being up in the tree and typing
 
-`artisan migrate`
+``` text
+$ artisan
+```
 
-If you are up in the project tree, can be be equivalent to
+It should
 
-`php ../../../../../../../../artisan migrate`
+``` text
+$ artisan
+Artisan found at /Users/antoniocarlosribeiro/code/pragmarx/pragmarx.com/artisan
+Laravel Framework 5.5.28
+
+Usage:
+  command [options] [arguments]
+
+...
+```
+
+Using artisan normally, it could be be equivalent to execute
+
+```
+$ php ../../../../../../../../artisan
+```
 
 ### Execute Artisan from anywhere in your Laravel project tree
 
 Let's suppose you went for a walk, far down the Illuminate tree and, being in 
 
-`/var/www/laravel/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations`, 
+```
+/var/www/laravel/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations, 
+```
 
 you need to run tinker, to test some stuff. Well... you have some options:
 
@@ -33,17 +52,15 @@ or just
 artisan tinker
 ```
 
-What do you prefer?
-
 #### Installation
 
 You can just download the raw file to your /usr/bin and make it executable
 
 ```
-sudo wget -q -O /usr/bin/artisan \
+sudo wget -q -O /usr/local/bin/artisan \
  https://raw.github.com/antonioribeiro/artisan-anywhere/master/artisan.sh
 
-sudo chmod 755 /usr/bin/artisan
+sudo chmod 755 /usr/local/bin/artisan
 ```
 
 or clone the repo and link it
@@ -51,9 +68,9 @@ or clone the repo and link it
 ```
 sudo git clone https://github.com/antonioribeiro/artisan-anywhere.git /etc/laravel-anywhere
 
-sudo ln -s /etc/laravel-anywhere/artisan.sh /usr/bin/artisan
+sudo ln -s /etc/laravel-anywhere/artisan.sh /usr/local/bin/artisan
 
-sudo chmod 755 /usr/bin/artisan
+sudo chmod 755 /usr/local/bin/artisan
 ```
 
 #### Contributing
