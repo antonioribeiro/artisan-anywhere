@@ -72,6 +72,12 @@ or just
 artisan tinker
 ```
 
+## Credits
+
+- [Antonio Carlos Ribeiro](https://github.com/antonioribeiro)
+- [Matija Kovačević](https://github.com/matijakovacevic)
+- [All Contributors](../../contributors)
+
 #### Contributing
 
 Pull requests and issues are more than welcome.
