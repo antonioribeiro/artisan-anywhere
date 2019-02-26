@@ -1,0 +1,27 @@
+{
+    "name": "antonioribeiro/artisan-anywhere",
+    "description": "Run the artisan command, no matter where you are in the project tree",
+    "type": "script",
+    "keywords": [
+        "laravel",
+        "artisan",
+        "command",
+        "global",
+        "recursive"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Antonio Carlos Ribeiro",
+            "email": "acr@antoniocarlosribeiro.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/antonioribeiro/artisan-anywhere/issues"
+    },
+    "prefer-stable": true,
+    "bin": [
+        "artisan"
+    ]
+}
+
