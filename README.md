@@ -3,15 +3,41 @@ Laravel Artisan Anywhere
 
 ### TLDR;
 
-This script will recursively look for the artisan command down the directory tree and execute it for you, no matter where you are in the project tree. So, being up in the tree and typing
+This script will recursively look for the artisan command down the directory tree and execute it for you, no matter where you are in the project tree.
 
-``` text
-$ artisan
+## Installation
+
+Install globally through composer
+
+```bash
+composer global require antonioribeiro/artisan-anywhere
 ```
 
-It should
+Or download the raw file to your /usr/bin and make it executable
 
-``` text
+```bash
+sudo wget -q -O /usr/local/bin/artisan \
+ https://raw.github.com/antonioribeiro/artisan-anywhere/master/artisan.sh
+
+sudo chmod 755 /usr/local/bin/artisan
+```
+
+or clone the repo and link it
+
+```bash
+sudo git clone https://github.com/antonioribeiro/artisan-anywhere.git /etc/laravel-anywhere
+
+sudo ln -s /etc/laravel-anywhere/artisan.sh /usr/local/bin/artisan
+
+sudo chmod 755 /usr/local/bin/artisan
+```
+
+
+## Usage
+
+Once installed, by running artisan from your project directory you should get
+
+``` bash
 $ artisan
 Artisan found at /Users/antoniocarlosribeiro/code/pragmarx/pragmarx.com/artisan
 Laravel Framework 5.5.28
@@ -22,23 +48,17 @@ Usage:
 ...
 ```
 
-Using artisan normally, it could be be equivalent to execute
-
-```
-$ php ../../../../../../../../artisan
-```
-
-### Execute Artisan from anywhere in your Laravel project tree
+#### Execute Artisan from anywhere in your Laravel project tree
 
 Let's suppose you went for a walk, far down the Illuminate tree and, being in 
 
 ```
-/var/www/laravel/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations, 
+$ cd /var/www/laravel/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations
 ```
 
-you need to run tinker, to test some stuff. Well... you have some options:
+and you need to run tinker, to test some stuff. Well... you have some options:
 
-```
+```bash
 php ../../../../../../../../artisan tinker
 
 php /var/www/laravel artisan tinker
@@ -48,29 +68,8 @@ cd /var/www/laravel ; php artisan tinker
 
 or just
 
-```
+```bash
 artisan tinker
-```
-
-#### Installation
-
-You can just download the raw file to your /usr/bin and make it executable
-
-```
-sudo wget -q -O /usr/local/bin/artisan \
- https://raw.github.com/antonioribeiro/artisan-anywhere/master/artisan.sh
-
-sudo chmod 755 /usr/local/bin/artisan
-```
-
-or clone the repo and link it
-
-```
-sudo git clone https://github.com/antonioribeiro/artisan-anywhere.git /etc/laravel-anywhere
-
-sudo ln -s /etc/laravel-anywhere/artisan.sh /usr/local/bin/artisan
-
-sudo chmod 755 /usr/local/bin/artisan
 ```
 
 #### Contributing
