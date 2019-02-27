@@ -17,7 +17,7 @@ Or download the raw file to your /usr/bin and make it executable
 
 ```bash
 sudo wget -q -O /usr/local/bin/artisan \
- https://raw.github.com/antonioribeiro/artisan-anywhere/master/artisan.sh
+ https://raw.github.com/antonioribeiro/artisan-anywhere/master/artisan
 
 sudo chmod 755 /usr/local/bin/artisan
 ```
